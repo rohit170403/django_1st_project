@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %} contact{% endblock title %} 
+
+{% block body %}
+<div class="container my-4 " >
+    <img src="\static\image\contact.jpeg" class="d-block w-100" alt="...">
+</div>
+    <form method="POST" action="/contact" class="row g-3 mx-5 my-5" >  
+      {% csrf_token %}
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name= "email" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name= "passw" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress"  name="addr" placeholder="1234 Main St">
+        </div>
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" name="city" id="inputCity">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select  name ="state" id="inputState" class="form-select">
+            <option selected>Choose...</option>
+            <option>maharashtra</option>
+            <option>delhi</option>
+            <option>gujrat</option>
+            <option>up</option>
+            <option>mp</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" name="zip" id="inputZip">
+        </div>
+        
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-dark">Sign in</button>
+
+        </div>
+
+      </form>
+
+{% endblock body %}
